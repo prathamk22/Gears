@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.gears.Fragment.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_model"
+        android:name="com.example.gears.Fragment.ModelFragment"
+        android:label="@string/model"
+        tools:layout="@layout/fragment_model" />
+
+    <fragment
+        android:id="@+id/nav_insurance"
+        android:name="com.example.gears.Fragment.InsuranceFragment"
+        android:label="@string/insurance"
+        tools:layout="@layout/fragment_insurance" />
+
+    <fragment
+        android:id="@+id/nav_owner"
+        android:name="com.example.gears.Fragment.OwnerFragment"
+        android:label="@string/owner"
+        tools:layout="@layout/fragment_owner" />
+
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.example.gears.Fragment.DetailsFragment"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/nav_emergency"
+        android:name="com.example.gears.Fragment.EmergencyFragment"
+        android:label="@string/emergency"
+        tools:layout="@layout/fragment_emergency" />
+
+    <dialog android:id="@+id/logOut"
+        android:name="com.example.gears.Fragment.HomeFragment"
+        android:label="@string/sign_out"
+        tools:layout="" />
+</navigation>

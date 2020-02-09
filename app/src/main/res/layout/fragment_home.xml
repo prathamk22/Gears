@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/linear_layout_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:behavior_peekHeight="75dp"
+            app:behavior_hideable="true"
+            android:elevation="2dp"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/actions"
+                        android:gravity="start"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:id="@+id/actionText"
+                        android:layout_marginLeft="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/actionText"
+                        android:gravity="center_vertical|end"
+                        android:layout_toRightOf="@+id/actionText"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/loadingContainer"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="?android:attr/progressBarStyleSmall"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/loading_location"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:layout_marginLeft="10dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="110dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_below="@+id/actionText"
+                        android:background="@drawable/card_background_style"
+                        android:layout_marginLeft="140dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actionText"
+                        android:orientation="horizontal"
+                        android:id="@+id/buttonHolder"
+                        android:layout_marginTop="10dp">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call Emergency Number"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textAllCaps="false"
+                            android:padding="10dp"
+                            android:textColor="#fff"
+                            android:id="@+id/emergency"
+                            android:layout_marginTop="10dp"
+                            android:background="#E44652"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Call your Contact"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textAllCaps="false"
+                            android:id="@+id/contact"
+                            android:textColor="#fff"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#043353"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/buttonHolder"
+                        android:text="@string/edit_details"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:background="?attr/selectableItemBackground"
+                        style="@style/Widget.AppCompat.Button.Borderless" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
